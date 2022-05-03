@@ -80,6 +80,10 @@ html {
 
 }
 
+.border-bottom {
+    border-bottom: 1px solid #dee2e6!important;
+}
+
 /* Why us */
 .rounded-rectangle {
     border-radius: 25%!important;
