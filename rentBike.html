@@ -1,54 +1,74 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="styles.css" />
-        <title>Bike UP - Rent a bike</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="shortcut icon" type="image/jpg" href="pictures/favicon.ico" />
-    </head>
-    <body>
-        <header>
-            <nav class="header">
-                <p>Home</p>
-                <p>How it works</p>
-                <p>bicycels</p>
-                <p>rent a bike</p>
-            </nav>
-        </header>
 
-        <section id="rent-bike-now">
-            <h1>RENT A BIKE NOW</h1>
-            <div class="rental-progress">
-                <p>Day & Time</p>
-                <p>Bike</p>
-                <p>Personal Data</p>
-                <p>Payment</p>
-                <p>Checkout</p>
-            </div>
-            <div class="dayTime">
-                <p>Choose a day and time fpr your bike-venture</p>
-            </div>
-        </section>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Bike UP - Rent a bike</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/jpg" href="pictures/favicon.ico" />
+</head>
 
-        <!-- Footer -->
-        <div class="container">
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-              <p class="col-md-4 mb-0 text-muted">&copy; 2022 Bike up, Inc</p>
-          
-              <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-              </a>
-          
-              <ul class="nav col-md-4 justify-content-end">
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+            <img class="navbar-brand" src="/pictures/logo.png"></img>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="index.html">Home</a>
+                    <a class="nav-item nav-link" href="howItWorks.html">How it works</a>
+                    <a class="nav-item nav-link" href="bicycles.html">Bicycles</a>
+                    <a class="nav-item nav-link active" href="rentBike.html">Rent a Bike</a>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+    <section id="rent-bike-now">
+        <h1>RENT A BIKE NOW</h1>
+        <div class="rental-progress">
+            <p>Day & Time</p>
+            <p>Bike</p>
+            <p>Personal Data</p>
+            <p>Payment</p>
+            <p>Checkout</p>
+        </div>
+        <div class="dayTime">
+            <p>Choose a day and time fpr your bike-venture</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-muted">&copy; 2022 Bike up, Inc</p>
+
+            <a href="/"
+                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap" />
+                </svg>
+            </a>
+
+            <ul class="nav col-md-4 justify-content-end">
                 <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">HOME</a></li>
                 <li class="nav-item"><a href="howItWorks.html" class="nav-link px-2 text-muted">HOW IT WORKS</a></li>
                 <li class="nav-item"><a href="bicycles.html" class="nav-link px-2 text-muted">BICYCELS</a></li>
                 <li class="nav-item"><a href="rentBike.html" class="nav-link px-2 text-muted">RENT A BIKE</a></li>
-              </ul>
-            </footer>
-          </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    </body>
+            </ul>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
