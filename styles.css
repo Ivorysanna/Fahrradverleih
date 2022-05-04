@@ -13,8 +13,17 @@ html {
 }
 
 .navbar-brand {
-    max-width: 180px;
+    max-width: 160px;
     height: auto;
+}
+
+nav {
+    padding: 20px;
+    font-size: larger;
+}
+
+.nav-item.nav-link.active {
+    text-decoration: underline;
 }
 
 #navbarNavAltMarkup {
