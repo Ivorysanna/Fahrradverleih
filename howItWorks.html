@@ -1,72 +1,328 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="styles.css" />
-        <title>Bike UP - How it works</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="shortcut icon" type="image/jpg" href="pictures/favicon.ico" />
-    </head>
-    <body>
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <img class="navbar-brand" src="/pictures/logo.png"></img>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                  <div class="navbar-nav">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Bike UP - How it works</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/jpg" href="pictures/favicon.ico" />
+    <script src="howItWorks.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <img class="navbar-brand" src="/pictures/logo.png"></img>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
                     <a class="nav-item nav-link" href="index.html">Home</a>
                     <a class="nav-item nav-link active" href="howItWorks.html">How it works</a>
                     <a class="nav-item nav-link" href="bicycles.html">Bicycles</a>
                     <a class="nav-item nav-link" href="rentBike.html">Rent a Bike</a>
-                  </div>
                 </div>
-              </nav>
-        </header>
+            </div>
+        </nav>
+    </header>
 
-        <section id="rent-a-bike">
-            <h1>FIND OUT, HOW YOU CAN RENT A BIKE</h1>
-            <div>
-                <p>Book your reservation</p>
-                <p>You can book a reservation for a bike of your liking in no time. Just use the Formular to select a date, a time and the bike you wish to rent. As soon as you’re done, you have successfully reserved a bike.</p>
-                <p class="button">Show more</p>
-            </div>
-            <div>
-                <p>Pick up your bike</p>
-                <p>After you reserved a bike you can pick up the bike at our store. You just need to scan the QR code you will receive as soon as the reservation was successful. Enjoy your ride :)</p>
-                <p class="button">Show more</p>
-            </div>
-            <div>
-                <p>Enjoy your ride</p>
-                <p>You’ve finally picked up the bike and now you’re ready to go. Over your rental period, BIKE UP will provide all the important informations such as duration, distance or battery stats.</p>
-                <p class="button">Show more</p>
-            </div>
-            <div>
-                <p>Return the bike</p>
-                <p>As soon as you’re done, please return the bike to one of our bike stations. This will automatically register your rental as done and end the rental period. You will receive a sales slip within the next minutes.</p>
-                <p class="button">Show more</p>
-            </div>
-        </section>
+    <section id="rent-a-bike">
 
-        <!-- Footer -->
-        <div class="container">
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-              <p class="col-md-4 mb-0 text-muted">&copy; 2022 Bike up, Inc</p>
-          
-              <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-              </a>
-          
-              <ul class="nav col-md-4 justify-content-end">
+        <h1>How to rent a bike</h1> <br>
+        <div class="howToRent">
+            <!-- Three columns of text below the carousel -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <h2>Book your reservation</h2>
+                    <svg class="bd-placeholder-img circle" width="120" height="120" xmlns="http://www.w3.org/2000/svg"
+                        role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice"
+                        focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777"
+                            dy=".3em">140x140</text>
+                    </svg>
+
+                    <p>You can book a reservation for a bike
+                        of your liking in no time. Just use the
+                        Formular to select a date, a time and the
+                        bike you wish to rent. As soon as you’re done,
+                        you have successfully reserved a bike.</p>
+
+                    <div id="bookResDiv" style="display:none">
+                        <strong> 1. Go to rent a bike</strong> <br>
+                        This form will contain the following
+                        steps to gather all the information
+                        which is required to use our bikes.
+                        Your data will only be used for the
+                        renting process. If you need help, feel
+                        free to watch our “Book a
+                        reservation” video, to get a step by
+                        step instruction on how to reserve a
+                        bike. <br>
+
+                        <strong> 2. Select Date and Time</strong> <br>
+                        The first thing you need to do, is to
+                        select the specific day and time at
+                        which you want to rent on of our
+                        bikes. If you know, that you won’t be
+                        able to make it, you can cancel your
+                        reservation. It’s important to make
+                        sure, that you will pick up your bike
+                        within the first 15 minutes or else we
+                        must charge you a fee of 2 euro for
+                        our services. <br>
+
+                        <strong> 3. Choose your bike</strong> <br>
+                        In this step you can select the bike
+                        you actually want to rent. You will
+                        see an overview of all the bikes,
+                        which are available during the day
+                        and time you’ve selected before. If
+                        you need help deciding which bike
+                        might be the best for you, don’t
+                        hesitate to contact our support. <br>
+
+                        <strong> 4. Your personal Data</strong> <br>
+                        In the last step of your reservation,
+                        you need to add your personal
+                        information such as name, address
+                        and payment method. After you
+                        added all the required informations,
+                        the reservation process is finished.
+                        You will receive a mail with all the
+                        informations, regarding your
+                        reservation plus the QR Code you
+                        will need to pick up the bike.
+
+                    </div>
+                    <input type="button" id = "showButton" name="answer" value="Show more" onclick="showExplainReservationDiv()"  />
+
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <h2>Pick up your bike</h2>
+                    <svg class="bd-placeholder-img circle" width="120" height="120" href="pictures/bikes_forest.svg"
+                        role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice"
+                        focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777"
+                            dy=".3em">140x140</text>
+                    </svg>
+
+                    <p>After you reserved a bike you can pick up
+                        the bike at our store. You just need to scan
+                        the QR code you will receive as soon as the
+                        reservation was successful. Enjoy your ride :)</p>
+
+                        <div id="pickUpDiv" style="display:none">
+                            <strong> 1. Go to rent a bike</strong> <br>
+                            This form will contain the following
+                            steps to gather all the information
+                            which is required to use our bikes.
+                            Your data will only be used for the
+                            renting process. If you need help, feel
+                            free to watch our “Book a
+                            reservation” video, to get a step by
+                            step instruction on how to reserve a
+                            bike. <br>
+    
+                            <strong> 2. Select Date and Time</strong> <br>
+                            The first thing you need to do, is to
+                            select the specific day and time at
+                            which you want to rent on of our
+                            bikes. If you know, that you won’t be
+                            able to make it, you can cancel your
+                            reservation. It’s important to make
+                            sure, that you will pick up your bike
+                            within the first 15 minutes or else we
+                            must charge you a fee of 2 euro for
+                            our services. <br>
+    
+                            <strong> 3. Choose your bike</strong> <br>
+                            In this step you can select the bike
+                            you actually want to rent. You will
+                            see an overview of all the bikes,
+                            which are available during the day
+                            and time you’ve selected before. If
+                            you need help deciding which bike
+                            might be the best for you, don’t
+                            hesitate to contact our support. <br>
+    
+                            <strong> 4. Your personal Data</strong> <br>
+                            In the last step of your reservation,
+                            you need to add your personal
+                            information such as name, address
+                            and payment method. After you
+                            added all the required informations,
+                            the reservation process is finished.
+                            You will receive a mail with all the
+                            informations, regarding your
+                            reservation plus the QR Code you
+                            will need to pick up the bike.
+    
+                        </div>
+                        <input type="button" id ="showButton" name="answer" value="Show more" onclick="pickUpDiv()"  />
+
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <h2>Enjoy your ride!</h2>
+                    <svg class="bd-placeholder-img circle" width="120" height="120" xmlns="http://www.w3.org/2000/svg"
+                        role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice"
+                        focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777"
+                            dy=".3em">140x140</text>
+                    </svg>
+
+                    <p>You’ve finally picked up the bike and now
+                        you’re ready to go. Over your rental period,
+                        BIKE UP will provide all the important information
+                        such as duration, distance or battery stats.</p>
+
+                        <div id="enjoyRideDiv" style="display:none">
+                            <strong> 1. Go to rent a bike</strong> <br>
+                            This form will contain the following
+                            steps to gather all the information
+                            which is required to use our bikes.
+                            Your data will only be used for the
+                            renting process. If you need help, feel
+                            free to watch our “Book a
+                            reservation” video, to get a step by
+                            step instruction on how to reserve a
+                            bike. <br>
+    
+                            <strong> 2. Select Date and Time</strong> <br>
+                            The first thing you need to do, is to
+                            select the specific day and time at
+                            which you want to rent on of our
+                            bikes. If you know, that you won’t be
+                            able to make it, you can cancel your
+                            reservation. It’s important to make
+                            sure, that you will pick up your bike
+                            within the first 15 minutes or else we
+                            must charge you a fee of 2 euro for
+                            our services. <br>
+    
+                            <strong> 3. Choose your bike</strong> <br>
+                            In this step you can select the bike
+                            you actually want to rent. You will
+                            see an overview of all the bikes,
+                            which are available during the day
+                            and time you’ve selected before. If
+                            you need help deciding which bike
+                            might be the best for you, don’t
+                            hesitate to contact our support. <br>
+    
+                            <strong> 4. Your personal Data</strong> <br>
+                            In the last step of your reservation,
+                            you need to add your personal
+                            information such as name, address
+                            and payment method. After you
+                            added all the required informations,
+                            the reservation process is finished.
+                            You will receive a mail with all the
+                            informations, regarding your
+                            reservation plus the QR Code you
+                            will need to pick up the bike.
+    
+                        </div>
+                        <input type="button" id ="showButton" name="answer" value="Show more" onclick="enjoyRideDiv()"  />
+
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <h2>Return the bike</h2>
+                    <svg class="bd-placeholder-img circle" width="120" height="120" xmlns="http://www.w3.org/2000/svg"
+                        role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice"
+                        focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777"
+                            dy=".3em">140x140</text>
+                    </svg>
+
+                    <p>As soon as you’re done, please return the bike
+                        to one of our bike stations. This will automatically
+                        register your rental as done and end the rental period.
+                        You will receive a sales slip within the next minutes.</p>
+
+                        <div id="doneDiv" style="display:none">
+                            <strong> 1. Go to rent a bike</strong> <br>
+                            This form will contain the following
+                            steps to gather all the information
+                            which is required to use our bikes.
+                            Your data will only be used for the
+                            renting process. If you need help, feel
+                            free to watch our “Book a
+                            reservation” video, to get a step by
+                            step instruction on how to reserve a
+                            bike. <br>
+    
+                            <strong> 2. Select Date and Time</strong> <br>
+                            The first thing you need to do, is to
+                            select the specific day and time at
+                            which you want to rent on of our
+                            bikes. If you know, that you won’t be
+                            able to make it, you can cancel your
+                            reservation. It’s important to make
+                            sure, that you will pick up your bike
+                            within the first 15 minutes or else we
+                            must charge you a fee of 2 euro for
+                            our services. <br>
+    
+                            <strong> 3. Choose your bike</strong> <br>
+                            In this step you can select the bike
+                            you actually want to rent. You will
+                            see an overview of all the bikes,
+                            which are available during the day
+                            and time you’ve selected before. If
+                            you need help deciding which bike
+                            might be the best for you, don’t
+                            hesitate to contact our support. <br>
+    
+                            <strong> 4. Your personal Data</strong> <br>
+                            In the last step of your reservation,
+                            you need to add your personal
+                            information such as name, address
+                            and payment method. After you
+                            added all the required informations,
+                            the reservation process is finished.
+                            You will receive a mail with all the
+                            informations, regarding your
+                            reservation plus the QR Code you
+                            will need to pick up the bike.
+    
+                        </div>
+                        <input type="button" id ="showButton" name="answer" value="Show more" onclick="doneDiv()"  />
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+    </section>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-muted">&copy; 2022 Bike up, Inc</p>
+
+            <a href="/"
+                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap" />
+                </svg>
+            </a>
+
+            <ul class="nav col-md-4 justify-content-end">
                 <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">HOME</a></li>
                 <li class="nav-item"><a href="howItWorks.html" class="nav-link px-2 text-muted">HOW IT WORKS</a></li>
                 <li class="nav-item"><a href="bicycles.html" class="nav-link px-2 text-muted">BICYCELS</a></li>
                 <li class="nav-item"><a href="rentBike.html" class="nav-link px-2 text-muted">RENT A BIKE</a></li>
-              </ul>
-            </footer>
-          </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    </body>
+            </ul>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
