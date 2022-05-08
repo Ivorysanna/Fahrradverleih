@@ -14,8 +14,8 @@ const showAvailableCollections = async () => {
                 <img src="http://placekitten.com/400/200" class="card-img-top" alt="Katze :)">
                 <div class="card-body">
                     <h5 class="card-title">${eachBike.Marke}</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <p class="card-text">Fahrradtyp: ${eachBike.Kategorie} <br/>Akku: ${eachBike.Akku}</p>
+                    <a href="#" class="btn btn-primary">Rent this bike</a>
                 </div>
             </div>
         </div>
