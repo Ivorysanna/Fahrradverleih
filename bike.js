@@ -11,10 +11,10 @@ const showAvailableCollections = async () => {
         let newHtmlString = `
         <div class="col">
             <div class="card">
-                <img src="http://placekitten.com/400/200" class="card-img-top" alt="Katze :)">
+                <img src="https://picsum.photos/400/200" class="card-img-top" alt="Katze :)">
                 <div class="card-body">
                     <h5 class="card-title">${eachBike.Marke}</h5>
-                    <p class="card-text">Fahrradtyp: ${eachBike.Kategorie} <br/>Akku: ${eachBike.Akku}</p>
+                    <p class="card-text">Biketype: ${eachBike.Kategorie} <br/>Akku: ${eachBike.Akku}</p>
                     <a href="#" class="btn btn-primary">Rent this bike</a>
                 </div>
             </div>
