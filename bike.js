@@ -11,7 +11,7 @@ const showAvailableCollections = async () => {
         let newHtmlString = `
         <div class="col">
             <div class="card">
-                <img src="https://picsum.photos/400/200" class="card-img-top" alt="Katze :)">
+                <img src="https://picsum.photos/400/200" class="card-img-top" alt="Bikes">
                 <div class="card-body">
                     <h5 class="card-title">${eachBike.Marke}</h5>
                     <p class="card-text">Biketype: ${eachBike.Kategorie} <br/>Akku: ${eachBike.Akku}</p>

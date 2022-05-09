@@ -78,7 +78,7 @@ nav {
 }
 
 .border-bottom {
-    border-bottom: 1px solid #dee2e6!important;
+    border-bottom: 1px solid #dee2e6 !important;
 }
 
 /* Why us */
@@ -146,4 +146,32 @@ nav {
     .bd-placeholder-img-lg {
         font-size: 3.5rem;
     }
+}
+
+.backgroundPicRentaBike {
+    background-image: url("/pictures/people_riding_a_bike.png");
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.btn-primary {
+    background-color: transparent !important;
+    border-radius: 25px !important;
+    border: 2px solid white !important;
+}
+
+.whiteText{
+    color: white !important;
 }
