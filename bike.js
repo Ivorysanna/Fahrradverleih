@@ -14,7 +14,7 @@ const showAvailableCollections = async () => {
                 <img src="${eachBike.Foto}" class="card-img-top" alt="Bikes">
                 <div class="card-body">
                     <h5 class="card-title">${eachBike.Marke}</h5>
-                    <p class="card-text">Biketype: ${eachBike.Kategorie} <br/>Akku: ${eachBike.Akku}</p>
+                    <p class="card-text">Biketype: ${eachBike.Kategorie} <br/>Akku: ${eachBike.Akku} <br/>Color: ${eachBike.Farbe}</p>
                     <a href="#" class="btn btn-primary">Rent this bike</a>
                 </div>
             </div>
