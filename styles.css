@@ -190,3 +190,9 @@ nav {
 .whiteText{
     color: white !important;
 }
+
+
+.card-img-top{
+    width: 500px;
+    height: 300px;
+}
