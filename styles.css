@@ -8,7 +8,6 @@ html {
     height: 100%;
     background-attachment: fixed;
     background-size: 100% auto;
-
 }
 
 .navbar-brand {
@@ -74,14 +73,15 @@ nav {
     margin-top: 200px;
     display: flex;
     justify-content: center;
-
 }
 
 .border-bottom {
     border-bottom: 1px solid #dee2e6 !important;
 }
 
+
 /* Why us */
+
 .rounded-rectangle {
     border-radius: 25%;
 }
@@ -101,8 +101,10 @@ nav {
     margin-bottom: 2rem;
 }
 
+
 /* how To Rent */
-.howToRent .col-lg-4 {
+
+.howToRent .col-lg-3 {
     text-align: center;
     align-items: center;
 }
@@ -111,7 +113,9 @@ nav {
     border-radius: 50%;
 }
 
+
 /* rtl:begin:ignore */
+
 .marketing .col-lg-4 p {
     margin-right: .75rem;
     margin-left: .75rem;
@@ -120,6 +124,7 @@ nav {
 
 
 /* Footer Styles */
+
 .b-example-divider {
     height: 3rem;
     background-color: rgba(0, 0, 0, .1);
@@ -132,7 +137,6 @@ nav {
     vertical-align: -.125em;
     fill: currentColor;
 }
-
 
 .bd-placeholder-img {
     font-size: 1.125rem;
@@ -166,7 +170,7 @@ nav {
     }
 }
 
-.btn-primary{
+.btn-primary {
     background-color: white !important;
     color: black !important;
     padding: 15px 32px;
@@ -180,23 +184,21 @@ nav {
     border: 2px solid black !important;
 }
 
-
-.btn-secondary{
+.btn-secondary {
     background-color: transparent !important;
     border-radius: 25px !important;
     border: 2px solid white !important;
 }
 
-.whiteText{
+.whiteText {
     color: white !important;
 }
 
-
-.card-img-top{
+.card-img-top {
     width: 500px;
     height: 300px;
 }
 
-#FAQ{
+#FAQ {
     margin-top: 3rem;
 }
