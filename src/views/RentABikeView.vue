@@ -1,3 +1,21 @@
+<script lang="ts">
+import Bikes from '@/components/Bikes.vue';
+export default {
+  components: { Bikes },
+    data() {
+        return {
+            bikeData:[]
+        };
+    },
+    mounted() {
+        console.log("hallo");
+        this.axios.get("http://localhost:3001/getAvailableBikes").then((response) => {
+            this.bikeData = response.data;
+        });
+    },
+};
+</script>
+
 <template>
     <section id="rent-bike-now">
         <h1>RENT A BIKE NOW</h1>
@@ -9,8 +27,7 @@
                 <input type="datetime-local" id="meeting-time" name="meeting-time" value="2022-05-12T19:30">
             </div>
             <p><strong>Choose your Bike</strong></p>
-            <div id="bicycles-container" class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 mx-4 mt-4">
-            </div>
+            <Bikes :bikeData="bikeData"></Bikes>
             <p><strong>Personal Data</strong></p>
             <div class="col-lg-3">
 

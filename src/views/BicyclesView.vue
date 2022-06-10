@@ -1,12 +1,22 @@
-<script lang="ts"></script>
+<script lang="ts">
+import Bikes from '@/components/Bikes.vue';
+export default {
+  components: { Bikes },
+    data() {
+        return {
+            bikeData:[]
+        };
+    },
+    mounted() {
+        console.log("hallo");
+        this.axios.get("http://localhost:3001/getAllBikes").then((response) => {
+            this.bikeData = response.data;
+        });
+    },
+};
+</script>
 
 <template>
-    <div id="bicycles-container" class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 mx-4 mt-4"></div>
+   <Bikes :bikeData="bikeData"></Bikes>
 </template>
 
-<style scoped>
-.card-img-top {
-    width: 500px;
-    height: 300px;
-}
-</style>
