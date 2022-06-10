@@ -42,7 +42,8 @@ export default {
 }
 
 .card-img-top {
-    width: 500px;
+    width: 100%;
     height: 300px;
+    object-fit: contain;
 }
 </style>
