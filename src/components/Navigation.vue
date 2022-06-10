@@ -17,10 +17,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="index.html">Home</a>
-                    <a class="nav-item nav-link" href="howItWorks.html">How it works</a>
-                    <a class="nav-item nav-link" href="bicycles.html">Bicycles</a>
-                    <a class="nav-item nav-link" href="rentBike.html">Rent a Bike</a>
+                    <RouterLink class="nav-item nav-link" to="/">Home</RouterLink>
+                    <RouterLink class="nav-item nav-link" to="/HowItWorks">How it works</RouterLink>
+                    <RouterLink class="nav-item nav-link" to="/Bicycles">Bicycles</RouterLink>
+                    <RouterLink class="nav-item nav-link" to="/RentABike">Rent a Bike</RouterLink>
                 </div>
             </div>
         </nav>
@@ -38,7 +38,7 @@ nav {
     font-size: larger;
 }
 
-.nav-item.nav-link.active {
+.nav-item.nav-link.router-link-active {
     text-decoration: underline;
 }
 

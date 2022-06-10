@@ -16,17 +16,8 @@ export default {
 </script>
 
 <template>
-    <navigation></navigation>
-    <header>
-        <div class="wrapper">
-            <p>{{ count }}</p>
-            <button @click="increment">+</button>
-            <nav>
-                <RouterLink to="/">Home</RouterLink>
-                <RouterLink to="/about">About</RouterLink>
-            </nav>
-        </div>
-    </header>
+    <Navigation></Navigation>
+
 
     <RouterView />
 </template>
