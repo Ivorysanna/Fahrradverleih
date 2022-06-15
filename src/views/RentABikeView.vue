@@ -124,6 +124,7 @@ export default {
                         </div>
                     </form>
                 </div>
+
                 <input class="btn btn-primary" type="button" ref="signUpButton" id="signUpButton" name="answer" value="Sign Up"
                     @click="signUpDiv" />
             </div>
