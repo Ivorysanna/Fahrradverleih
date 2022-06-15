@@ -1,7 +1,14 @@
 <script lang="ts">
 import Bikes from "@/components/Bikes.vue";
+import { checkOutStore } from "@/stores/checkOut";
+import { mapWritableState } from "pinia";
 export default {
     components: { Bikes },
+    setup() {
+        const counterStore = checkOutStore();
+
+        return { checkOutStore };
+    },
     data() {
         return {
             bikeData: [],
@@ -27,7 +34,7 @@ export default {
         });
     },
     methods: {
-        logInDiv: function() {
+        logInDiv: function () {
             var x = document.getElementById("logInDiv")!;
             if (x.style.display === "none") {
                 x.style.display = "block";
@@ -37,7 +44,7 @@ export default {
                 this.$refs.logInButton.value = "Log In";
             }
         },
-        signUpDiv: function() {
+        signUpDiv: function () {
             var x = document.getElementById("signUpDiv")!;
             if (x.style.display === "none") {
                 x.style.display = "block";
@@ -46,26 +53,30 @@ export default {
                 x.style.display = "none";
                 this.$refs.signUpButton.value = "Sign Up";
             }
-        }
-    }
+        },
+    },
+    computed: {
+        ...mapWritableState(checkOutStore, ["selectedDate"]),
+    },
 };
 </script>
 
 <template>
     <section id="rent-bike-now">
+        <input type="datetime-local" id="datetest" v-model="selectedDate" />
         <h1>RENT A BIKE NOW</h1>
         <div class="rental-progress">
             <p><strong>Day & Time</strong></p>
             Choose a day and Time
             <div>
-                <label for="meeting-time">From:</label> <br>
+                <label for="meeting-time">From:</label> <br />
 
-                <input type="datetime-local" id="meeting-time" name="meeting-time" value="2022-05-12T19:30">
+                <input type="datetime-local" id="meeting-time" name="meeting-time" value="2022-05-12T19:30" />
             </div>
             <div>
-                <label for="meeting-time">To:</label> <br>
+                <label for="meeting-time">To:</label> <br />
 
-                <input type="datetime-local" id="meeting-time" name="meeting-time" value="2022-05-15T22:30">
+                <input type="datetime-local" id="meeting-time" name="meeting-time" value="2022-05-15T22:30" />
             </div>
             <p><strong>Choose your Bike</strong></p>
             <Bikes :bikeData="bikeData"></Bikes>
@@ -87,8 +98,15 @@ export default {
                         </div>
                     </form>
                 </div>
-                <input class="btn btn-primary" type="button" ref="logInButton" id="logInButton" name="answer" value="Log In"
-                    @click="logInDiv" />
+                <input
+                    class="btn btn-primary"
+                    type="button"
+                    ref="logInButton"
+                    id="logInButton"
+                    name="answer"
+                    value="Log In"
+                    @click="logInDiv"
+                />
             </div>
 
             <div class="col-lg-3">
@@ -125,8 +143,15 @@ export default {
                     </form>
                 </div>
 
-                <input class="btn btn-primary" type="button" ref="signUpButton" id="signUpButton" name="answer" value="Sign Up"
-                    @click="signUpDiv" />
+                <input
+                    class="btn btn-primary"
+                    type="button"
+                    ref="signUpButton"
+                    id="signUpButton"
+                    name="answer"
+                    value="Sign Up"
+                    @click="signUpDiv"
+                />
             </div>
 
             <p>Payment</p>
@@ -138,5 +163,4 @@ export default {
     </section>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
