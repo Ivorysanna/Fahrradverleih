@@ -23,6 +23,11 @@ const router = createRouter({
             name: "RentABike",
             component: () => import("@/views/RentABikeView.vue"),
         },
+        {
+            path: "/About",
+            name: "About",
+            component: () => import("@/views/AboutView.vue"),
+        },
     ],
 });
 

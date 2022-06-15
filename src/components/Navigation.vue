@@ -21,6 +21,7 @@
                     <RouterLink class="nav-item nav-link" to="/HowItWorks">How it works</RouterLink>
                     <RouterLink class="nav-item nav-link" to="/Bicycles">Bicycles</RouterLink>
                     <RouterLink class="nav-item nav-link" to="/RentABike">Rent a Bike</RouterLink>
+                    <RouterLink class="nav-item nav-link" to="/About">About</RouterLink>
                 </div>
             </div>
         </nav>
