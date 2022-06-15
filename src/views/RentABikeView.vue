@@ -26,6 +26,28 @@ export default {
             this.bikeData = response.data;
         });
     },
+    methods: {
+        logInDiv: function() {
+            var x = document.getElementById("logInDiv")!;
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                this.$refs.logInButton.value = "Cancel";
+            } else {
+                x.style.display = "none";
+                this.$refs.logInButton.value = "Log In";
+            }
+        },
+        signUpDiv: function() {
+            var x = document.getElementById("signUpDiv")!;
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                this.$refs.signUpButton.value = "Cancel";
+            } else {
+                x.style.display = "none";
+                this.$refs.signUpButton.value = "Sign Up";
+            }
+        }
+    }
 };
 </script>
 
@@ -34,13 +56,20 @@ export default {
         <h1>RENT A BIKE NOW</h1>
         <div class="rental-progress">
             <p><strong>Day & Time</strong></p>
+            Choose a day and Time
             <div>
-                <label for="meeting-time">Choose a time for your ride:</label> <br />
+                <label for="meeting-time">From:</label> <br>
 
-                <input type="datetime-local" id="meeting-time" name="meeting-time" value="2022-05-12T19:30" />
+                <input type="datetime-local" id="meeting-time" name="meeting-time" value="2022-05-12T19:30">
+            </div>
+            <div>
+                <label for="meeting-time">To:</label> <br>
+
+                <input type="datetime-local" id="meeting-time" name="meeting-time" value="2022-05-15T22:30">
             </div>
             <p><strong>Choose your Bike</strong></p>
             <Bikes :bikeData="bikeData"></Bikes>
+
             <p><strong>Personal Data</strong></p>
             <div class="col-lg-3">
                 <div id="logInDiv" style="display: none">
@@ -58,14 +87,8 @@ export default {
                         </div>
                     </form>
                 </div>
-                <input
-                    class="btn btn-primary"
-                    type="button"
-                    id="logInButton"
-                    name="answer"
-                    value="Log In"
-                    onclick="logInDiv()"
-                />
+                <input class="btn btn-primary" type="button" ref="logInButton" id="logInButton" name="answer" value="Log In"
+                    @click="logInDiv" />
             </div>
 
             <div class="col-lg-3">
@@ -101,14 +124,8 @@ export default {
                         </div>
                     </form>
                 </div>
-                <input
-                    class="btn btn-primary"
-                    type="button"
-                    id="signUpButton"
-                    name="answer"
-                    value="Sign Up"
-                    onclick="signUpDiv()"
-                />
+                <input class="btn btn-primary" type="button" ref="signUpButton" id="signUpButton" name="answer" value="Sign Up"
+                    @click="signUpDiv" />
             </div>
 
             <p>Payment</p>
@@ -120,4 +137,5 @@ export default {
     </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>

@@ -9,7 +9,7 @@ export default {
     },
     mounted() {
         console.log("hallo");
-        this.axios.get("/getAllBikes").then((response) => {
+        this.axios.get("/getAllBikesFromSherlock").then((response) => {
             this.bikeData = response.data;
         });
     },
