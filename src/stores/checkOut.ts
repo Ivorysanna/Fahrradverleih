@@ -3,7 +3,8 @@ import { defineStore } from "pinia";
 export const checkOutStore = defineStore({
     id: "checkOutStore",
     state: () => ({
-        selectedDate: "",
+        selectedDateFrom: "",
+        selectedDateTo: "",
         selectBike: "",
     }),
     getters: {

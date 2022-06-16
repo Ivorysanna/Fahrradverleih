@@ -15,7 +15,6 @@ export default {
         };
     },
     mounted() {
-        console.log("hallo");
         var data = JSON.stringify({
             status: ["0"],
         });
@@ -56,7 +55,7 @@ export default {
         },
     },
     computed: {
-        ...mapWritableState(checkOutStore, ["selectedDate"]),
+        ...mapWritableState(checkOutStore, ["selectedDateFrom", "selectedDateTo"]),
     },
 };
 </script>
@@ -71,12 +70,12 @@ export default {
             <div>
                 <label for="meeting-time">From:</label> <br />
 
-                <input type="datetime-local" id="meeting-time" name="meeting-time" value="2022-05-12T19:30" />
+                <input type="datetime-local" id="meeting-time" name="meeting-time"  v-model="selectedDateFrom" />
             </div>
             <div>
                 <label for="meeting-time">To:</label> <br />
 
-                <input type="datetime-local" id="meeting-time" name="meeting-time" value="2022-05-15T22:30" />
+                <input type="datetime-local" id="meeting-time" name="meeting-time" v-model="selectedDateTo" />
             </div>
             <p><strong>Choose your Bike</strong></p>
             <Bikes :bikeData="bikeData"></Bikes>
