@@ -8,8 +8,7 @@ export default {
         };
     },
     mounted() {
-        console.log("hallo");
-        this.axios.get("/getAllBikesFromSherlock").then((response) => {
+        this.axios.get("/getAllBikes").then((response) => {
             this.bikeData = response.data;
         });
         console.log("ist durchgelaufen");
