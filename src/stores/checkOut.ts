@@ -6,5 +6,6 @@ export const checkOutStore = defineStore({
         selectedDateFrom: "",
         selectedDateTo: "",
         selectedBike: "",
+        selectedPaymentOption: "Cash",
     }),
 });

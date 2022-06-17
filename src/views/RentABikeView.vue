@@ -70,7 +70,7 @@ export default {
         },
     },
     computed: {
-        ...mapWritableState(checkOutStore, ["selectedDateFrom", "selectedDateTo"]),
+        ...mapWritableState(checkOutStore, ["selectedDateFrom", "selectedDateTo", "selectedPaymentOption"]),
         ...mapWritableState(sessionStore, ["loggedInCustomerID"]),
     },
 };
@@ -177,11 +177,11 @@ export default {
                             <h5 class="card-title">Payment</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Please choose your prefered payment option</h6>
                             <form>
-                                <input type="radio" id="mc" name="payment" value="Mastercard" />
+                                <input type="radio" id="mc" name="payment" v-model="selectedPaymentOption" value="Mastercard" />
                                 <label for="mc"> Mastercard</label>
-                                <input type="radio" id="pp" name="payment" value="Paypal" />
+                                <input type="radio" id="pp" name="payment" v-model="selectedPaymentOption" value="Paypal" />
                                 <label for="pp">Paypal</label>
-                                <input type="radio" id="cash" name="payment" value="Cash" />
+                                <input type="radio" id="cash" name="payment" v-model="selectedPaymentOption" value="Cash" />
                                 <label for="cash">Cash</label>
                             </form>
                         </div>
