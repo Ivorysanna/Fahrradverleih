@@ -9,20 +9,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <h2>Book your reservation</h2>
-                    <svg
-                        class="bd-placeholder-img circle"
-                        width="120"
-                        height="120"
-                        xmlns="http://www.w3.org/2000/svg"
-                        role="img"
-                        aria-label="Placeholder: 140x140"
-                        preserveAspectRatio="xMidYMid slice"
-                        focusable="false"
-                    >
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#777" />
-                        <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-                    </svg>
+                    <img class="circle" src="@/assets/pictures/book_res.png" width="120" height="120" />
 
                     <p>
                         You can book a reservation for a bike of your liking in no time. Just use the Formular to select
@@ -30,7 +17,7 @@
                         reserved a bike.
                     </p>
 
-                    <div id="bookResDiv" style="display: none">
+                    <div id="bookResDiv" v-if="showMoreBook">
                         <strong> 1. Go to rent a bike</strong> <br />
                         This form will contain the following steps to gather all the information which is required to
                         use our bikes. Your data will only be used for the renting process. If you need help, feel free
@@ -54,39 +41,20 @@
                         process is finished. You will receive a mail with all the informations, regarding your
                         reservation plus the QR Code you will need to pick up the bike.
                     </div>
-                    <input
-                        class="btn btn-primary"
-                        type="button"
-                        id="showButton"
-                        name="answer"
-                        value="Show more"
-                        onclick="showExplainReservationDiv()"
-                    />
+                    <input class="btn btn-primary" type="button" id="showButton" name="answer"
+                        :value="buttonText(showMoreBook)" @click="showMoreBook = !showMoreBook" />
                 </div>
                 <!-- /.col-lg-4 -->
                 <div class="col-lg-3">
                     <h2>Pick up your bike</h2>
-                    <svg
-                        class="bd-placeholder-img circle"
-                        width="120"
-                        height="120"
-                        href="pictures/bikes_forest.svg"
-                        role="img"
-                        aria-label="Placeholder: 140x140"
-                        preserveAspectRatio="xMidYMid slice"
-                        focusable="false"
-                    >
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#777" />
-                        <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-                    </svg>
+                    <img class="circle" src="@/assets/pictures/pick.png" width="120" height="120" />
 
                     <p>
                         After you reserved a bike you can pick up the bike at our store. You just need to scan the QR
                         code you will receive as soon as the reservation was successful. Enjoy your ride :)
                     </p>
 
-                    <div id="pickUpDiv" style="display: none">
+                    <div id="pickUpDiv" v-if="showMorePick">
                         <strong> 1. Go to rent a bike</strong> <br />
                         This form will contain the following steps to gather all the information which is required to
                         use our bikes. Your data will only be used for the renting process. If you need help, feel free
@@ -110,39 +78,20 @@
                         process is finished. You will receive a mail with all the informations, regarding your
                         reservation plus the QR Code you will need to pick up the bike.
                     </div>
-                    <input
-                        class="btn btn-primary"
-                        type="button"
-                        id="showButton"
-                        name="answer"
-                        value="Show more"
-                        onclick="pickUpDiv()"
-                    />
+                    <input class="btn btn-primary" type="button" id="showButton" name="answer" 
+                    :value="buttonText(showMorePick)" @click="showMorePick = !showMorePick" />
                 </div>
                 <!-- /.col-lg-4 -->
                 <div class="col-lg-3">
                     <h2>Enjoy your ride!</h2>
-                    <svg
-                        class="bd-placeholder-img circle"
-                        width="120"
-                        height="120"
-                        xmlns="http://www.w3.org/2000/svg"
-                        role="img"
-                        aria-label="Placeholder: 140x140"
-                        preserveAspectRatio="xMidYMid slice"
-                        focusable="false"
-                    >
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#777" />
-                        <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-                    </svg>
+                    <img class="circle" src="@/assets/pictures/enjoy.png" width="120" height="120" />
 
                     <p>
                         You’ve finally picked up the bike and now you’re ready to go. Over your rental period, BIKE UP
                         will provide all the important information such as duration, distance or battery stats.
                     </p>
 
-                    <div id="enjoyRideDiv" style="display: none">
+                    <div id="enjoyRideDiv" v-if="showMoreEnjoy">
                         <strong> 1. Go to rent a bike</strong> <br />
                         This form will contain the following steps to gather all the information which is required to
                         use our bikes. Your data will only be used for the renting process. If you need help, feel free
@@ -166,32 +115,13 @@
                         process is finished. You will receive a mail with all the informations, regarding your
                         reservation plus the QR Code you will need to pick up the bike.
                     </div>
-                    <input
-                        class="btn btn-primary"
-                        type="button"
-                        id="showButton"
-                        name="answer"
-                        value="Show more"
-                        onclick="enjoyRideDiv()"
-                    />
+                    <input class="btn btn-primary" type="button" id="showButton" name="answer"
+                    :value="buttonText(showMoreEnjoy)" @click="showMoreEnjoy = !showMoreEnjoy" />
                 </div>
                 <!-- /.col-lg-4 -->
                 <div class="col-lg-3">
                     <h2>Return the bike</h2>
-                    <svg
-                        class="bd-placeholder-img circle"
-                        width="120"
-                        height="120"
-                        xmlns="http://www.w3.org/2000/svg"
-                        role="img"
-                        aria-label="Placeholder: 140x140"
-                        preserveAspectRatio="xMidYMid slice"
-                        focusable="false"
-                    >
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#777" />
-                        <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-                    </svg>
+                    <img class="circle" src="@/assets/pictures/return.png" width="120" height="120" />
 
                     <p>
                         As soon as you’re done, please return the bike to one of our bike stations. This will
@@ -199,7 +129,7 @@
                         slip within the next minutes.
                     </p>
 
-                    <div id="doneDiv" style="display: none">
+                    <div id="doneDiv" v-if="showMoreReturn">
                         <strong> 1. Go to rent a bike</strong> <br />
                         This form will contain the following steps to gather all the information which is required to
                         use our bikes. Your data will only be used for the renting process. If you need help, feel free
@@ -223,14 +153,8 @@
                         process is finished. You will receive a mail with all the informations, regarding your
                         reservation plus the QR Code you will need to pick up the bike.
                     </div>
-                    <input
-                        class="btn btn-primary"
-                        type="button"
-                        id="showButton"
-                        name="answer"
-                        value="Show more"
-                        onclick="doneDiv()"
-                    />
+                    <input class="btn btn-primary" type="button" id="showButton" name="answer"
+                     :value="buttonText(showMoreReturn)" @click="showMoreReturn = !showMoreReturn" />
                 </div>
                 <!-- /.col-lg-4 -->
             </div>
@@ -249,3 +173,28 @@
     border-radius: 50%;
 }
 </style>
+
+<script>
+
+export default {
+    data() {
+        return {
+            showMoreBook: false,
+            showMorePick: false,
+            showMoreEnjoy: false,
+            showMoreReturn: false,
+        };
+    },
+    methods: {
+        logInDiv: function () {
+           
+        },
+        buttonText(bool) {
+             return bool ? "Show less" : "Show more";
+        }
+    },
+    computed: {
+    }
+};
+
+</script>

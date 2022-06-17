@@ -31,7 +31,7 @@
                 <img class="rounded-rectangle" src="@/assets/pictures/customer.png">
 
                 <p>
-                    You want ro go for a ride, but don’t know where to start? Don’t worry, our employees are specialised
+                    You want to go for a ride, but don’t know where to start? Don’t worry, our employees are specialised
                     on bikes and they’ll make sure to find the right bike for your ride.
                 </p>
             </div>
