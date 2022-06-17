@@ -29,7 +29,7 @@
     <br />
     <div>
         <h1>Our Story</h1>
-        <p>
+        <p id="story">
             Our "Bike Up" - Rental Website has been realised as part of a bigger study project named "IoT and Business
             processes" that was conducted at Furtwangen University in cooperation with Fischer AG. It started in the
             Winter Semester of 2021 and will continue until the end of July 2022. The ultimate goal of this project was
@@ -47,16 +47,17 @@
 </template>
 
 <style scoped>
-.howToRent .col-lg-3 {
+.col-lg-3 {
     text-align: center;
     align-items: center;
 }
 
-.circle {
-    border-radius: 50%;
-}
-
 .rounded {
     border-radius: 100%;
+}
+
+#story {
+    margin-left: 30px;
+    margin-right: 30px;
 }
 </style>

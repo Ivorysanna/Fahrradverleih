@@ -202,7 +202,6 @@
     letter-spacing: 10px;
     font-size: 60px;
     text-align: center;
-    opacity: 1 !important;
 }
 
 #introduction {
@@ -257,8 +256,7 @@
 }
 
 .startscreen {
-    background-image: url("@/assets/pictures/welcome.png");
-    opacity: 50%;
+    background-image: url("@/assets/pictures/welcome_op50.png");
     height: 600px;
 }
 
