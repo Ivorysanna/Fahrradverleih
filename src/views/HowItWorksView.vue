@@ -17,8 +17,12 @@
                         reserved a bike.
                     </p>
 
-                    <div id="bookResDiv" v-if="showMoreBook">
+                    <input class="btn btn-primary" type="button" id="showButton" name="answer"
+                        :value="buttonText(showMoreBook)" @click="showMoreBook = !showMoreBook" />
+
+                    <div class="foldyDiv" id="bookResDiv" v-if="showMoreBook">
                         <strong> 1. Go to rent a bike</strong> <br />
+                        <p>
                         This form will contain the following steps to gather all the information which is required to
                         use our bikes. Your data will only be used for the renting process. If you need help, feel free
                         to watch our “Book a reservation” video, to get a step by step instruction on how to reserve a
@@ -40,9 +44,8 @@
                         address and payment method. After you added all the required informations, the reservation
                         process is finished. You will receive a mail with all the informations, regarding your
                         reservation plus the QR Code you will need to pick up the bike.
+                        </p>
                     </div>
-                    <input class="btn btn-primary" type="button" id="showButton" name="answer"
-                        :value="buttonText(showMoreBook)" @click="showMoreBook = !showMoreBook" />
                 </div>
                 <!-- /.col-lg-4 -->
                 <div class="col-lg-3">
@@ -164,6 +167,11 @@
 </template>
 
 <style scoped>
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
 .howToRent .col-lg-3 {
     text-align: center;
     align-items: center;
@@ -172,7 +180,17 @@
 .circle {
     border-radius: 50%;
 }
+
+.foldyDiv{
+    display: inline-flexbox;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 
+}
+
 </style>
+
+
 
 <script>
 
