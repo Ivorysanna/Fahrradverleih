@@ -9,7 +9,7 @@ export default {
         },
     },
     computed: {
-        ...mapWritableState(checkOutStore, ["selectBike"]),
+        ...mapWritableState(checkOutStore, ["selectedBike"]),
     },
 };
 </script>
@@ -25,7 +25,7 @@ export default {
                         Biketype: {{ eachBike.Kategorie }} <br />Akku: {{ eachBike.Akku }} <br />Color:
                         {{ eachBike.Farbe }}
                     </p>
-                    <button class="btn btn-primary" @click="selectBike = eachBike.Fahrrad_ID">Rent this bike</button>
+                    <button class="btn btn-primary" @click="selectedBike = eachBike.Fahrrad_ID">Rent this bike</button>
                 </div>
             </div>
         </div>

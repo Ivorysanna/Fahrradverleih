@@ -1,14 +1,11 @@
 <script lang="ts">
 import Bikes from "@/components/Bikes.vue";
 import { checkOutStore } from "@/stores/checkOut";
-import { mapWritableState } from "pinia";
+import { sessionStore } from "@/stores/session";
+import { mapWritableState, mapActions } from "pinia";
+import type { AxiosResponse } from "axios";
 export default {
     components: { Bikes },
-    setup() {
-        const counterStore = checkOutStore();
-
-        return { checkOutStore };
-    },
     data() {
         return {
             bikeData: [],
@@ -33,6 +30,7 @@ export default {
         });
     },
     methods: {
+        ...mapActions(sessionStore, ["logIn"]),
         logInDiv: function () {
             var x = document.getElementById("logInDiv")!;
             if (x.style.display === "none") {
@@ -53,21 +51,27 @@ export default {
                 this.$refs.signUpButton.value = "Sign Up";
             }
         },
-        login() {
+        loginFormAction() {
+            const userIDToLogIn: string = this.$refs.logInCustomerID.value;
             this.axios({
                 method: "post",
                 url: "/logIn",
                 data: {
                     lastName: this.$refs.logInLastName.value,
-                    _userID: this.$refs.logInCustomerID.value,
+                    _userID: userIDToLogIn,
                 },
-            }).then((response) => {
+            }).then((response: AxiosResponse) => {
                 console.log(response.data);
+                if (response.data == true) {
+                    console.log("Logging in user...");
+                    this.logIn(userIDToLogIn);
+                }
             });
         },
     },
     computed: {
         ...mapWritableState(checkOutStore, ["selectedDateFrom", "selectedDateTo"]),
+        ...mapWritableState(sessionStore, ["loggedInCustomerID"]),
     },
 };
 </script>
@@ -94,7 +98,7 @@ export default {
             <p><strong>Personal Data</strong></p>
             <div class="col-lg-3">
                 <div id="logInDiv" style="display: none">
-                    <form @submit.prevent="login" class="row g-3">
+                    <form @submit.prevent="loginFormAction" class="row g-3">
                         <div class="col-md-6">
                             <label for="lastName" class="form-label">Last Name</label>
                             <input type="text" class="form-control" id="lastName" ref="logInLastName" />

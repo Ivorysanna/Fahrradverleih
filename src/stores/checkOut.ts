@@ -5,14 +5,6 @@ export const checkOutStore = defineStore({
     state: () => ({
         selectedDateFrom: "",
         selectedDateTo: "",
-        selectBike: "",
+        selectedBike: "",
     }),
-    getters: {
-        doubleCount: (state) => state.counter * 2,
-    },
-    actions: {
-        increment() {
-            this.counter++;
-        },
-    },
 });
