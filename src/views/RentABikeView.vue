@@ -168,7 +168,26 @@ export default {
                 />
             </div>
 
-            <p>Payment</p>
+            <!-- <p>Payment</p> -->
+
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                <div class="col">
+                    <div class="card col text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Payment</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Please choose your prefered payment option</h6>
+                            <form>
+                                <input type="radio" id="mc" name="payment" value="Mastercard" />
+                                <label for="mc"> Mastercard</label>
+                                <input type="radio" id="pp" name="payment" value="Paypal" />
+                                <label for="pp">Paypal</label>
+                                <input type="radio" id="cash" name="payment" value="Cash" />
+                                <label for="cash">Cash</label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <p>Checkout</p>
         </div>
         <div class="dayTime">
