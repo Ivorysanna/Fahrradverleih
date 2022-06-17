@@ -70,7 +70,7 @@ export default {
         },
     },
     computed: {
-        ...mapWritableState(checkOutStore, ["selectedDateFrom", "selectedDateTo", "selectedPaymentOption"]),
+        ...mapWritableState(checkOutStore, ["selectedBike", "selectedDateFrom", "selectedDateTo", "selectedPaymentOption"]),
         ...mapWritableState(sessionStore, ["loggedInCustomerID"]),
     },
 };
@@ -216,7 +216,7 @@ export default {
                             <div class="card col text-center">
                                 <div class="card-body">
                                     <h6 class="card-title">1. DAY & TIME</h6>
-                                    <p class="card-text"></p>
+                                    <p class="card-text">From: {{  selectedDateFrom }} <br/>To: {{ selectedDateTo }}</p>
                                 </div>
                             </div>
                         </div>
@@ -224,7 +224,7 @@ export default {
                             <div class="card col text-center">
                                 <div class="card-body">
                                     <h6 class="card-title">2. BIKE</h6>
-                                    <p class="card-text"></p>
+                                    <p class="card-text">{{ selectedBike }}</p>
                                 </div>
                             </div>
                         </div>
@@ -232,7 +232,7 @@ export default {
                             <div class="card col text-center">
                                 <div class="card-body">
                                     <h6 class="card-title">3. PERSONAL DATA</h6>
-                                    <p class="card-text"></p>
+                                    <p class="card-text">{{ loggedInCustomerID }}</p>
                                 </div>
                             </div>
                         </div>
@@ -240,7 +240,7 @@ export default {
                             <div class="card col text-center">
                                 <div class="card-body">
                                     <h6 class="card-title">4. PAYMENT</h6>
-                                    <p class="card-text"></p>
+                                    <p class="card-text">{{ selectedPaymentOption }}</p>
                                 </div>
                             </div>
                         </div>
