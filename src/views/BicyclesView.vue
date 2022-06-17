@@ -1,22 +1,21 @@
 <script lang="ts">
-import Bikes from '@/components/Bikes.vue';
+import Bikes from "@/components/Bikes.vue";
 export default {
-  components: { Bikes },
+    components: { Bikes },
     data() {
         return {
-            bikeData:[]
+            bikeData: [],
         };
     },
     mounted() {
-        console.log("hallo");
-        this.axios.get("/getAllBikesFromSherlock").then((response) => {
+        this.axios.get("/getAllBikes").then((response) => {
             this.bikeData = response.data;
         });
+        console.log("ist durchgelaufen");
     },
 };
 </script>
 
 <template>
-   <Bikes :bikeData="bikeData"></Bikes>
+    <Bikes :bikeData="bikeData"></Bikes>
 </template>
-

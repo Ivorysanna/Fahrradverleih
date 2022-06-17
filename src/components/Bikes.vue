@@ -1,10 +1,15 @@
 <script lang="ts">
+import { checkOutStore } from "@/stores/checkOut";
+import { mapWritableState } from "pinia";
 export default {
     props: {
         bikeData: {
             type: Array,
             required: true,
         },
+    },
+    computed: {
+        ...mapWritableState(checkOutStore, ["selectBike"]),
     },
 };
 </script>
@@ -20,7 +25,7 @@ export default {
                         Biketype: {{ eachBike.Kategorie }} <br />Akku: {{ eachBike.Akku }} <br />Color:
                         {{ eachBike.Farbe }}
                     </p>
-                    <a href="#" class="btn btn-primary">Rent this bike</a>
+                    <button class="btn btn-primary" @click="selectBike = eachBike.Fahrrad_ID">Rent this bike</button>
                 </div>
             </div>
         </div>
