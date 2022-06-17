@@ -53,8 +53,17 @@ export default {
                 this.$refs.signUpButton.value = "Sign Up";
             }
         },
-        loginInCLick (){
-            
+        login() {
+            this.axios({
+                method: "post",
+                url: "/logIn",
+                data: {
+                    lastName: this.$refs.logInLastName.value,
+                    _userID: this.$refs.logInCustomerID.value,
+                },
+            }).then((response) => {
+                console.log(response.data);
+            });
         },
     },
     computed: {
@@ -72,7 +81,7 @@ export default {
             <div>
                 <label for="meeting-time">From:</label> <br />
 
-                <input type="datetime-local" id="meeting-time" name="meeting-time"  v-model="selectedDateFrom" />
+                <input type="datetime-local" id="meeting-time" name="meeting-time" v-model="selectedDateFrom" />
             </div>
             <div>
                 <label for="meeting-time">To:</label> <br />
@@ -85,14 +94,14 @@ export default {
             <p><strong>Personal Data</strong></p>
             <div class="col-lg-3">
                 <div id="logInDiv" style="display: none">
-                    <form class="row g-3">
+                    <form @submit.prevent="login" class="row g-3">
                         <div class="col-md-6">
                             <label for="lastName" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="lastName" />
+                            <input type="text" class="form-control" id="lastName" ref="logInLastName" />
                         </div>
                         <div class="col-md-6">
                             <label for="customerID" class="form-label">Customer ID</label>
-                            <input type="text" class="form-control" id="customerID" />
+                            <input type="text" class="form-control" id="customerID" ref="logInCustomerID" />
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary">Confirm</button>
