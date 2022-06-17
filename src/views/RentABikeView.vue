@@ -53,6 +53,9 @@ export default {
                 this.$refs.signUpButton.value = "Sign Up";
             }
         },
+        loginInCLick (){
+            
+        },
     },
     computed: {
         ...mapWritableState(checkOutStore, ["selectedDateFrom", "selectedDateTo"]),
@@ -62,7 +65,6 @@ export default {
 
 <template>
     <section id="rent-bike-now">
-        <input type="datetime-local" id="datetest" v-model="selectedDate" />
         <h1>RENT A BIKE NOW</h1>
         <div class="rental-progress">
             <p><strong>Day & Time</strong></p>
@@ -123,11 +125,11 @@ export default {
                             <label for="inputEmail4" class="form-label">E-Mail</label>
                             <input type="email" class="form-control" id="inputEmail4" />
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <label for="inputAddress2" class="form-label">Address</label>
                             <input type="text" class="form-control" id="inputAddress2" />
                         </div>
-                        <div class="col-md-1">
+                        <div class="col-md-2">
                             <label for="inputZip" class="form-label">Zip</label>
                             <input type="text" class="form-control" id="inputZip" />
                         </div>
