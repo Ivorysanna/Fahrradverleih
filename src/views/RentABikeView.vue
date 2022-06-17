@@ -177,11 +177,29 @@ export default {
                             <h5 class="card-title">Payment</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Please choose your prefered payment option</h6>
                             <form>
-                                <input type="radio" id="mc" name="payment" v-model="selectedPaymentOption" value="Mastercard" />
+                                <input
+                                    type="radio"
+                                    id="mc"
+                                    name="payment"
+                                    v-model="selectedPaymentOption"
+                                    value="Mastercard"
+                                />
                                 <label for="mc"> Mastercard</label>
-                                <input type="radio" id="pp" name="payment" v-model="selectedPaymentOption" value="Paypal" />
+                                <input
+                                    type="radio"
+                                    id="pp"
+                                    name="payment"
+                                    v-model="selectedPaymentOption"
+                                    value="Paypal"
+                                />
                                 <label for="pp">Paypal</label>
-                                <input type="radio" id="cash" name="payment" v-model="selectedPaymentOption" value="Cash" />
+                                <input
+                                    type="radio"
+                                    id="cash"
+                                    name="payment"
+                                    v-model="selectedPaymentOption"
+                                    value="Cash"
+                                />
                                 <label for="cash">Cash</label>
                             </form>
                         </div>
@@ -189,6 +207,46 @@ export default {
                 </div>
             </div>
             <p>Checkout</p>
+
+            <div>
+                <h1 class="border-bottom">Checkout</h1>
+                <div class="container p-4">
+                    <div class="row row-cols-1 row-cols-md-4 g-4">
+                        <div class="col">
+                            <div class="card col text-center">
+                                <div class="card-body">
+                                    <h6 class="card-title">1. DAY & TIME</h6>
+                                    <p class="card-text"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card col text-center">
+                                <div class="card-body">
+                                    <h6 class="card-title">2. BIKE</h6>
+                                    <p class="card-text"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card col text-center">
+                                <div class="card-body">
+                                    <h6 class="card-title">3. PERSONAL DATA</h6>
+                                    <p class="card-text"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card col text-center">
+                                <div class="card-body">
+                                    <h6 class="card-title">4. PAYMENT</h6>
+                                    <p class="card-text"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="dayTime">
             <p>Choose a day and time for your bike-venture</p>
