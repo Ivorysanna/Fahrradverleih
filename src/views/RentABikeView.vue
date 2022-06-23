@@ -65,23 +65,32 @@ export default {
                 if (response.data == true) {
                     console.log("Logging in user...");
                     this.logIn(userIDToLogIn);
+                    this.axios.get("/getCustomer/" + userIDToLogIn).then((response: AxiosResponse) => {
+                        console.log(response.data);
+                        this.loggedInCustomer = response.data;
+                    });
                 }
             });
         },
     },
     computed: {
-        ...mapWritableState(checkOutStore, ["selectedBike", "selectedDateFrom", "selectedDateTo", "selectedPaymentOption"]),
-        ...mapWritableState(sessionStore, ["loggedInCustomerID"]),
+        ...mapWritableState(checkOutStore, [
+            "selectedBike",
+            "selectedDateFrom",
+            "selectedDateTo",
+            "selectedPaymentOption",
+        ]),
+        ...mapWritableState(sessionStore, ["loggedInCustomer"]),
     },
 };
 </script>
 
 <template>
     <section id="rent-bike-now">
-        <h1>RENT A BIKE NOW</h1>
+        <h1 id="title">RENT A BIKE NOW</h1>
         <div class="rental-progress">
-            <p><strong>Day & Time</strong></p>
-            Choose a day and Time
+            <h1 class="border-bottom headlines">Day & Time</h1>
+            <h6>Choose a day and Time</h6>
             <div>
                 <label for="meeting-time">From:</label> <br />
 
@@ -92,10 +101,10 @@ export default {
 
                 <input type="datetime-local" id="meeting-time" name="meeting-time" v-model="selectedDateTo" />
             </div>
-            <p><strong>Choose your Bike</strong></p>
+            <h1 class="border-bottom headlines">Bikes</h1>
             <Bikes :bikeData="bikeData"></Bikes>
 
-            <p><strong>Personal Data</strong></p>
+            <h1 class="border-bottom headlines">Personal Data</h1>
             <div class="col-lg-3">
                 <div id="logInDiv" style="display: none">
                     <form @submit.prevent="loginFormAction" class="row g-3">
@@ -169,12 +178,11 @@ export default {
             </div>
 
             <!-- <p>Payment</p> -->
-
+            <h1 class="border-bottom headlines">Payment</h1>
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 <div class="col">
                     <div class="card col text-center">
                         <div class="card-body">
-                            <h5 class="card-title">Payment</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Please choose your prefered payment option</h6>
                             <form>
                                 <input
@@ -206,17 +214,19 @@ export default {
                     </div>
                 </div>
             </div>
-            <p>Checkout</p>
 
             <div>
-                <h1 class="border-bottom">Checkout</h1>
+                <h1 class="border-bottom headlines">Checkout</h1>
                 <div class="container p-4">
                     <div class="row row-cols-1 row-cols-md-4 g-4">
                         <div class="col">
                             <div class="card col text-center">
                                 <div class="card-body">
                                     <h6 class="card-title">1. DAY & TIME</h6>
-                                    <p class="card-text">From: {{  selectedDateFrom }} <br/>To: {{ selectedDateTo }}</p>
+                                    <p class="card-text">
+                                        {{ selectedDateFrom }} <br />
+                                        ___ {{ selectedDateTo }}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -224,15 +234,24 @@ export default {
                             <div class="card col text-center">
                                 <div class="card-body">
                                     <h6 class="card-title">2. BIKE</h6>
-                                    <p class="card-text">{{ selectedBike }}</p>
+                                    <div v-if="selectedBike">
+                                        <p class="card-text">{{ selectedBike.Marke }}</p>
+                                        <p class="card-text">{{ selectedBike.Kategorie }}</p>
+                                        <p class="card-text">{{ selectedBike.Farbe }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="card col text-center">
-                                <div class="card-body">
-                                    <h6 class="card-title">3. PERSONAL DATA</h6>
-                                    <p class="card-text">{{ loggedInCustomerID }}</p>
+                                <h6 class="card-title">3. PERSONAL DATA</h6>
+                                <div v-if="loggedInCustomer">
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                            {{ loggedInCustomer.Nachname }} {{ loggedInCustomer.Vorname }}
+                                        </p>
+                                        <p class="card-text">{{ loggedInCustomer.Anschrift }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -248,10 +267,25 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="dayTime">
-            <p>Choose a day and time for your bike-venture</p>
-        </div>
     </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+.headlines {
+    padding-top: 1rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 20px;
+}
+
+#title {
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 60px;
+    text-align: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+</style>

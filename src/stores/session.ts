@@ -3,15 +3,15 @@ import { defineStore } from "pinia";
 export const sessionStore = defineStore({
     id: "sessionStore",
     state: () => ({
-        loggedInCustomerID: "",
+        loggedInCustomer: null,
         
     }),
     getters: {
-        isUserLoggedIn: (state) => state.loggedInCustomerID != "",
+        isUserLoggedIn: (state) => state.loggedInCustomer != "",
     },
     actions: {
-        logIn(customerIDToLogIn: string) {
-            this.loggedInCustomerID = customerIDToLogIn;
+        logIn(customerIDToLogIn: any) {
+            this.loggedInCustomer = customerIDToLogIn;
         },
     },
 });
