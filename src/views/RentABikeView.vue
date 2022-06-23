@@ -65,6 +65,10 @@ export default {
                 if (response.data == true) {
                     console.log("Logging in user...");
                     this.logIn(userIDToLogIn);
+                    this.axios.get("/getCustomer/" + userIDToLogIn).then((response: AxiosResponse) => {
+                        console.log(response.data);
+                        this.loggedInCustomer = response.data;
+                    });
                 }
             });
         },
@@ -100,7 +104,7 @@ export default {
             <h1 class="border-bottom headlines">Bikes</h1>
             <Bikes :bikeData="bikeData"></Bikes>
 
-           <h1 class="border-bottom headlines">Personal Data</h1>
+            <h1 class="border-bottom headlines">Personal Data</h1>
             <div class="col-lg-3">
                 <div id="logInDiv" style="display: none">
                     <form @submit.prevent="loginFormAction" class="row g-3">
@@ -210,7 +214,6 @@ export default {
                     </div>
                 </div>
             </div>
-            
 
             <div>
                 <h1 class="border-bottom headlines">Checkout</h1>
@@ -220,7 +223,10 @@ export default {
                             <div class="card col text-center">
                                 <div class="card-body">
                                     <h6 class="card-title">1. DAY & TIME</h6>
-                                    <p class="card-text"> {{ selectedDateFrom }} <br /> ___ {{ selectedDateTo }}</p>
+                                    <p class="card-text">
+                                        {{ selectedDateFrom }} <br />
+                                        ___ {{ selectedDateTo }}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -228,17 +234,24 @@ export default {
                             <div class="card col text-center">
                                 <div class="card-body">
                                     <h6 class="card-title">2. BIKE</h6>
-                                    <p class="card-text">{{ selectedBike.Marke }}</p>
-                                    <p class="card-text">{{ selectedBike.Kategorie }}</p>
-                                    <p class="card-text">{{ selectedBike.Farbe }}</p>
+                                    <div v-if="selectedBike">
+                                        <p class="card-text">{{ selectedBike.Marke }}</p>
+                                        <p class="card-text">{{ selectedBike.Kategorie }}</p>
+                                        <p class="card-text">{{ selectedBike.Farbe }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="card col text-center">
-                                <div class="card-body">
-                                    <h6 class="card-title">3. PERSONAL DATA</h6>
-                                    <p class="card-text">{{ loggedInCustomer.Name }}</p>
+                                <h6 class="card-title">3. PERSONAL DATA</h6>
+                                <div v-if="loggedInCustomer">
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                            {{ loggedInCustomer.Nachname }} {{ loggedInCustomer.Vorname }}
+                                        </p>
+                                        <p class="card-text">{{ loggedInCustomer.Anschrift }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -258,7 +271,7 @@ export default {
 </template>
 
 <style scoped>
-.headlines{
+.headlines {
     padding-top: 1rem;
     text-transform: uppercase;
     font-weight: 300;
@@ -272,8 +285,7 @@ export default {
     text-align: center;
 }
 
-.uppercase{
-  text-transform: uppercase;  
+.uppercase {
+    text-transform: uppercase;
 }
-
 </style>
