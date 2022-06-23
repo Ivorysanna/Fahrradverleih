@@ -85,7 +85,7 @@ export default {
     <section id="rent-bike-now">
         <h1>RENT A BIKE NOW</h1>
         <div class="rental-progress">
-            <h1 class="border-bottom">Day & Time</h1>
+            <h1 class="border-bottom headlines">Day & Time</h1>
             <h6>Choose a day and Time</h6>
             <div>
                 <label for="meeting-time">From:</label> <br />
@@ -97,10 +97,10 @@ export default {
 
                 <input type="datetime-local" id="meeting-time" name="meeting-time" v-model="selectedDateTo" />
             </div>
-            <h1 class="border-bottom">Bikes</h1>
+            <h1 class="border-bottom headlines">Bikes</h1>
             <Bikes :bikeData="bikeData"></Bikes>
 
-           <h1 class="border-bottom">Personal Data</h1>
+           <h1 class="border-bottom headlines">Personal Data</h1>
             <div class="col-lg-3">
                 <div id="logInDiv" style="display: none">
                     <form @submit.prevent="loginFormAction" class="row g-3">
@@ -174,7 +174,7 @@ export default {
             </div>
 
             <!-- <p>Payment</p> -->
-            <h1 class="border-bottom">Payment</h1>
+            <h1 class="border-bottom headlines">Payment</h1>
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 <div class="col">
                     <div class="card col text-center">
@@ -213,7 +213,7 @@ export default {
             
 
             <div>
-                <h1 class="border-bottom">Checkout</h1>
+                <h1 class="border-bottom headlines">Checkout</h1>
                 <div class="container p-4">
                     <div class="row row-cols-1 row-cols-md-4 g-4">
                         <div class="col">
@@ -255,4 +255,12 @@ export default {
     </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+.headlines{
+    padding-top: 1rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 20px;
+}
+
+</style>
