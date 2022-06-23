@@ -5,7 +5,7 @@ export const checkOutStore = defineStore({
     state: () => ({
         selectedDateFrom: "",
         selectedDateTo: "",
-        selectedBike: "",
+        selectedBike: null,
         selectedPaymentOption: "Cash",
     }),
 });

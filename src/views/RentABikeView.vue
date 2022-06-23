@@ -76,14 +76,14 @@ export default {
             "selectedDateTo",
             "selectedPaymentOption",
         ]),
-        ...mapWritableState(sessionStore, ["loggedInCustomerID"]),
+        ...mapWritableState(sessionStore, ["loggedInCustomer"]),
     },
 };
 </script>
 
 <template>
     <section id="rent-bike-now">
-        <h1>RENT A BIKE NOW</h1>
+        <h1 id="title">RENT A BIKE NOW</h1>
         <div class="rental-progress">
             <h1 class="border-bottom headlines">Day & Time</h1>
             <h6>Choose a day and Time</h6>
@@ -220,7 +220,7 @@ export default {
                             <div class="card col text-center">
                                 <div class="card-body">
                                     <h6 class="card-title">1. DAY & TIME</h6>
-                                    <p class="card-text">From: {{ selectedDateFrom }} <br />To: {{ selectedDateTo }}</p>
+                                    <p class="card-text"> {{ selectedDateFrom }} <br /> ___ {{ selectedDateTo }}</p>
                                 </div>
                             </div>
                         </div>
@@ -228,7 +228,9 @@ export default {
                             <div class="card col text-center">
                                 <div class="card-body">
                                     <h6 class="card-title">2. BIKE</h6>
-                                    <p class="card-text">{{ selectedBike }}</p>
+                                    <p class="card-text">{{ selectedBike.Marke }}</p>
+                                    <p class="card-text">{{ selectedBike.Kategorie }}</p>
+                                    <p class="card-text">{{ selectedBike.Farbe }}</p>
                                 </div>
                             </div>
                         </div>
@@ -236,7 +238,7 @@ export default {
                             <div class="card col text-center">
                                 <div class="card-body">
                                     <h6 class="card-title">3. PERSONAL DATA</h6>
-                                    <p class="card-text">{{ loggedInCustomerID }}</p>
+                                    <p class="card-text">{{ loggedInCustomer.Name }}</p>
                                 </div>
                             </div>
                         </div>
@@ -261,6 +263,17 @@ export default {
     text-transform: uppercase;
     font-weight: 300;
     letter-spacing: 20px;
+}
+
+#title {
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 60px;
+    text-align: center;
+}
+
+.uppercase{
+  text-transform: uppercase;  
 }
 
 </style>
