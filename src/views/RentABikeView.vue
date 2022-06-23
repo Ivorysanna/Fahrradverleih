@@ -224,8 +224,8 @@ export default {
                                 <div class="card-body">
                                     <h6 class="card-title">1. DAY & TIME</h6>
                                     <p class="card-text">
-                                        {{ selectedDateFrom }} <br />
-                                        ___ {{ selectedDateTo }}
+                                       {{new Date( selectedDateFrom ).toLocaleString() }} <br />
+                                        --- <br/> {{new Date( selectedDateTo ).toLocaleString() }}
                                     </p>
                                 </div>
                             </div>
