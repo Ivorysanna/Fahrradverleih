@@ -91,7 +91,7 @@ export default {
         <div class="rental-progress">
             <h1 class="border-bottom headlines">Day & Time</h1>
             <h6>Choose a day and Time</h6>
-            <div>
+            <div class="rentalForms">
                 <label for="meeting-time">From:</label> <br />
 
                 <input type="datetime-local" id="meeting-time" name="meeting-time" v-model="selectedDateFrom" />
@@ -287,5 +287,26 @@ export default {
 
 .uppercase {
     text-transform: uppercase;
+}
+
+.col.singleBike {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.card-img-top {
+    height: 330px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px;
+    width: max-content;
+}
+
+.rentalForms {
+    display: flex;
+    align-items: center;
 }
 </style>
