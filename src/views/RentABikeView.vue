@@ -70,7 +70,12 @@ export default {
         },
     },
     computed: {
-        ...mapWritableState(checkOutStore, ["selectedBike", "selectedDateFrom", "selectedDateTo", "selectedPaymentOption"]),
+        ...mapWritableState(checkOutStore, [
+            "selectedBike",
+            "selectedDateFrom",
+            "selectedDateTo",
+            "selectedPaymentOption",
+        ]),
         ...mapWritableState(sessionStore, ["loggedInCustomerID"]),
     },
 };
@@ -80,8 +85,8 @@ export default {
     <section id="rent-bike-now">
         <h1>RENT A BIKE NOW</h1>
         <div class="rental-progress">
-            <p><strong>Day & Time</strong></p>
-            Choose a day and Time
+            <h1 class="border-bottom">Day & Time</h1>
+            <h6>Choose a day and Time</h6>
             <div>
                 <label for="meeting-time">From:</label> <br />
 
@@ -92,10 +97,10 @@ export default {
 
                 <input type="datetime-local" id="meeting-time" name="meeting-time" v-model="selectedDateTo" />
             </div>
-            <p><strong>Choose your Bike</strong></p>
+            <h1 class="border-bottom">Bikes</h1>
             <Bikes :bikeData="bikeData"></Bikes>
 
-            <p><strong>Personal Data</strong></p>
+           <h1 class="border-bottom">Personal Data</h1>
             <div class="col-lg-3">
                 <div id="logInDiv" style="display: none">
                     <form @submit.prevent="loginFormAction" class="row g-3">
@@ -169,12 +174,11 @@ export default {
             </div>
 
             <!-- <p>Payment</p> -->
-
+            <h1 class="border-bottom">Payment</h1>
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 <div class="col">
                     <div class="card col text-center">
                         <div class="card-body">
-                            <h5 class="card-title">Payment</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Please choose your prefered payment option</h6>
                             <form>
                                 <input
@@ -206,7 +210,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <p>Checkout</p>
+            
 
             <div>
                 <h1 class="border-bottom">Checkout</h1>
@@ -216,7 +220,7 @@ export default {
                             <div class="card col text-center">
                                 <div class="card-body">
                                     <h6 class="card-title">1. DAY & TIME</h6>
-                                    <p class="card-text">From: {{  selectedDateFrom }} <br/>To: {{ selectedDateTo }}</p>
+                                    <p class="card-text">From: {{ selectedDateFrom }} <br />To: {{ selectedDateTo }}</p>
                                 </div>
                             </div>
                         </div>
@@ -247,9 +251,6 @@ export default {
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="dayTime">
-            <p>Choose a day and time for your bike-venture</p>
         </div>
     </section>
 </template>
