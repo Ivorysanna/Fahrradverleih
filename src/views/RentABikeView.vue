@@ -218,7 +218,8 @@ export default {
                                     <h6 class="card-title">1. DAY & TIME</h6>
                                     <p class="card-text">
                                         {{ new Date(selectedDateFrom).toLocaleString() }} <br />
-                                        --- <br /> {{ new Date(selectedDateTo).toLocaleString() }}
+                                        --- <br />
+                                        {{ new Date(selectedDateTo).toLocaleString() }}
                                     </p>
                                 </div>
                             </div>
@@ -258,6 +259,10 @@ export default {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Confirm</button>
             </div>
         </div>
     </section>
