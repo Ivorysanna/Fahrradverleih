@@ -9,6 +9,13 @@ export default {
     data() {
         return {
             bikeData: [],
+            selectedFirstName: null,
+            selectedLastName: null,
+            selectedGender: null,
+            selectedEmail: null,
+            selectedAddress: null,
+            selectedPhone: null,
+            selectedBirthday: null,
         };
     },
     mounted() {
@@ -94,6 +101,29 @@ export default {
                     console.log("error", error);
                 });
         },
+        createCustomer() {
+            this.axios({
+                method: "post",
+                url: "/createNewCustomer",
+                data: {
+                    lastname: this.selectedLastName,
+                    firstname: this.selectedFirstName,
+                    address: this.selectedAddress,
+                    mail: this.selectedEmail,
+                    phone: this.selectedPhone,
+                    birthday: this.selectedBirthday,
+                    sex: this.selectedGender,
+                },
+            })
+                .then((response: AxiosResponse) => {
+                    if (response.status == 200) {
+                        alert("success!");
+                    }
+                })
+                .catch((error: AxiosError) => {
+                    console.log("error", error);
+                });
+        },
     },
     computed: {
         ...mapWritableState(checkOutStore, [
@@ -161,38 +191,38 @@ export default {
                     <form class="row g-3">
                         <div class="col-md-6">
                             <label for="firstName" class="form-label">First name</label>
-                            <input type="text" class="form-control" id="firstName" />
+                            <input type="text" class="form-control" id="firstName" v-model="selectedFirstName" />
                         </div>
                         <div class="col-md-6">
                             <label for="lastName" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="lastName" />
+                            <input type="text" class="form-control" id="lastName" v-model="selectedLastName" />
                         </div>
                         <div class="col-12">
-                            <label for="inputEmail4" class="form-label">Gender</label>
-                            <input type="radio" id="female" value="female" v-model="picked" />
-                            <label for="one">Female</label>
+                                <label for="inputEmail4" class="form-label">Gender</label>
+                                <input type="radio" id="female" value="female" v-model="selectedGender" />
+                                <label for="one">Female</label>
 
-                            <input type="radio" id="male" value="male" v-model="picked" />
-                            <label for="one">Male</label>
+                                <input type="radio" id="male" value="male" v-model="selectedGender" />
+                                <label for="one">Male</label>
 
-                            <input type="radio" id="other" value="other" v-model="picked" />
-                            <label for="one">Other</label>
+                                <input type="radio" id="other" value="other" v-model="selectedGender" />
+                                <label for="one">Other</label>
                         </div>
                         <div class="col-12">
                             <label for="inputEmail4" class="form-label">E-Mail</label>
-                            <input type="email" class="form-control" id="inputEmail4" />
+                            <input type="email" class="form-control" id="inputEmail4" v-model="selectedEmail" />
                         </div>
                         <div class="col-md-12">
                             <label for="inputAddress" class="form-label">Address</label>
-                            <input type="text" class="form-control" id="inputAddress" />
+                            <input type="text" class="form-control" id="inputAddress" v-model="selectedAddress"/>
                         </div>
                         <div class="col-md-6">
                             <label for="inputphone" class="form-label">Phone</label>
-                            <input type="text" class="form-control" id="inputphone" />
+                            <input type="text" class="form-control" id="inputphone" v-model="selectedPhone" />
                         </div>
                         <div class="col-md-6">
                             <label for="inputbirthdate" class="form-label">Birthday</label>
-                            <input type="date" class="form-control" id="inputbirthdate" />
+                                <input type="date" class="form-control" id="inputbirthdate" v-model="selectedBirthday"/>
                         </div>
                         <!-- <div class="col-md-2">
                                 <label for="inputZip" class="form-label">Zip</label>
@@ -204,13 +234,20 @@ export default {
                             </div> -->
 
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary">Confirm</button>
+                            <button class="btn btn-primary"  @click.prevent="createCustomer">Confirm</button>
                         </div>
                     </form>
                 </div>
 
-                <input class="btn btn-primary" type="button" ref="signUpButton" id="signUpButton" name="answer"
-                    value="Sign Up" @click="signUpDiv" />
+                <input
+                        class="btn btn-primary"
+                        type="button"
+                        ref="signUpButton"
+                        id="signUpButton"
+                        name="answer"
+                        value="Sign Up"
+                        @click="signUpDiv"
+                    />
             </div>
         </div>
 
