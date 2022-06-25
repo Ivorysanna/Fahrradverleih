@@ -18,6 +18,7 @@ export default {
 
 <template>
     <!-- <Bikes :bikeData="bikeData"></Bikes> -->
+    <p id="title">BICYCLES</p>
     <div id="bicycles" class="row row-cols-2 row-cols-md-2 row-cols-xl-3 g-4 mx-4 mt-4">
         <div class="col singleBike" v-for="eachBike in bikeData" :key="eachBike.Fahrrad_ID">
             <div class="card">
@@ -72,5 +73,12 @@ export default {
     width: max-content;
     border-radius: 5%;
     background-color: #FFF9B2;
+}
+
+#title {
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 60px;
+    text-align: center;
 }
 </style>

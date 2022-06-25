@@ -1,7 +1,7 @@
 <script lang="ts"></script>
 <template>
     <div class="row">
-        <h1>About Us</h1>
+        <p id="title">ABOUT US</p>
         <div class="col-lg-3">
             <h2>Eva Breuninger</h2>
             <img class="rounded" src="@/assets/pictures/Eva_crop.jpg" width="120" height="120" />
@@ -47,6 +47,12 @@
 </template>
 
 <style scoped>
+#title {
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 60px;
+    text-align: center;
+}
 .col-lg-3 {
     text-align: center;
     align-items: center;

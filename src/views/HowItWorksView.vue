@@ -2,7 +2,7 @@
 
 <template>
     <section id="rent-a-bike">
-        <h1>How to rent a bike</h1>
+        <p id="title">HOW TO RENT A BIKE</p>
         <br />
         <div class="howToRent">
             <!-- Three columns of text below the carousel -->
@@ -201,6 +201,12 @@
 </template>
 
 <style scoped>
+#title {
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 60px;
+    text-align: center;
+}
 .test {
     display: inline-block;
     padding: 20px;

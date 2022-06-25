@@ -109,7 +109,7 @@ export default {
 
 <template>
     <section id="rent-bike-now">
-        <h1 id="title">RENT A BIKE NOW</h1>
+        <p id="title">RENT A BIKE NOW</p>
         <div class="rental-progress">
             <h1 class="border-bottom headlines paddingTop">Day & Time</h1>
 
