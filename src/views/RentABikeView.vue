@@ -170,21 +170,40 @@ export default {
                                 <input type="text" class="form-control" id="lastName" />
                             </div>
                             <div class="col-12">
+                                <label for="inputEmail4" class="form-label">Gender</label>
+                                <input type="radio" id="female" value="female" v-model="picked" />
+                                <label for="one">Female</label>
+
+                                <input type="radio" id="male" value="male" v-model="picked" />
+                                <label for="one">Male</label>
+
+                                <input type="radio" id="other" value="other" v-model="picked" />
+                                <label for="one">Other</label>
+                            </div>
+                            <div class="col-12">
                                 <label for="inputEmail4" class="form-label">E-Mail</label>
                                 <input type="email" class="form-control" id="inputEmail4" />
                             </div>
-                            <div class="col-md-5">
-                                <label for="inputAddress2" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="inputAddress2" />
+                            <div class="col-md-12">
+                                <label for="inputAddress" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="inputAddress" />
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-6">
+                                <label for="inputphone" class="form-label">Phone</label>
+                                <input type="text" class="form-control" id="inputphone" />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputbirthdate" class="form-label">Birthday</label>
+                                <input type="date" class="form-control" id="inputbirthdate" />
+                            </div>
+                            <!-- <div class="col-md-2">
                                 <label for="inputZip" class="form-label">Zip</label>
                                 <input type="text" class="form-control" id="inputZip" />
                             </div>
                             <div class="col-md-5">
                                 <label for="inputCity" class="form-label">City</label>
                                 <input type="text" class="form-control" id="inputCity" />
-                            </div>
+                            </div> -->
 
                             <div class="col-12">
                                 <button type="submit" class="btn btn-primary">Confirm</button>
