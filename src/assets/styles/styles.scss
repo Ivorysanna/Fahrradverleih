@@ -1,3 +1,5 @@
+//Yellow Color: #FEF199
+
 h1 {
     text-align: center;
     padding-bottom: 2rem;
@@ -15,8 +17,26 @@ h1 {
     cursor: pointer;
     border-radius: 25px;
     border: 2px solid black;
+
 }
 
+.button-hollow-black {
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 40px;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 2px solid black;
+    transition: all 0.5s;
+    &:hover {
+        color: #FEF199;
+        background-color: #707070;
+      }
+}
 .button-hollow-white {
     color: white;
     padding: 15px 32px;
@@ -28,6 +48,11 @@ h1 {
     cursor: pointer;
     border-radius: 25px;
     border: 2px solid white;
+    transition: all 0.5s;
+    &:hover {
+        color: #FEF199;
+        background-color: #707070;
+      }
 }
 
 .btn-primary {
