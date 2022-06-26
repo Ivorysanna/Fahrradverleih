@@ -137,9 +137,7 @@
                 <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                        dolores et ea rebum. Stet clita kasd gubergren,
+                        Register easily and for free via our website or visit our store to rent a bike. Collect your bike at your desired time and enjoy your ride.
                     </div>
                 </div>
             </div>

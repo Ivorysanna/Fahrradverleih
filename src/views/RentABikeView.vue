@@ -94,7 +94,7 @@ export default {
             })
                 .then((response: AxiosResponse) => {
                     if (response.status == 200) {
-                        alert("success!");
+                        alert("Vielen Dank für deine Bestellung!");
                     }
                 })
                 .catch((error: AxiosError) => {
@@ -117,7 +117,7 @@ export default {
             })
                 .then((response: AxiosResponse) => {
                     if (response.status == 200) {
-                        alert("success!");
+                        alert("Vielen Dank für deine Anmeldung!");
                     }
                 })
                 .catch((error: AxiosError) => {
