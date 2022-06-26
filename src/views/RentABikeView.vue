@@ -198,15 +198,15 @@ export default {
                             <input type="text" class="form-control" id="lastName" v-model="selectedLastName" />
                         </div>
                         <div class="col-12">
-                                <label for="inputEmail4" class="form-label">Gender</label>
+                                <label for="inputEmail4" class="form-label gender">Gender</label>
                                 <input type="radio" id="female" value="female" v-model="selectedGender" />
-                                <label for="one">Female</label>
+                                <label  class="gender" for="one">Female</label>
 
                                 <input type="radio" id="male" value="male" v-model="selectedGender" />
-                                <label for="one">Male</label>
+                                <label class="gender" for="one">Male</label>
 
                                 <input type="radio" id="other" value="other" v-model="selectedGender" />
-                                <label for="one">Other</label>
+                                <label class="gender" for="one">Other</label>
                         </div>
                         <div class="col-12">
                             <label for="inputEmail4" class="form-label">E-Mail</label>
@@ -446,6 +446,11 @@ export default {
 }
 
 .payment {
+    padding-left: 10px;
+    padding-right: 40px;
+}
+
+.gender {
     padding-left: 10px;
     padding-right: 40px;
 }
